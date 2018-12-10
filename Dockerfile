@@ -4,6 +4,10 @@
 # version: 6.3.0-v1.0.4
 FROM tomcat:8.0-jre8
 
+# Download Community Edition
+cd resources
+wget --progress=bar:force:noscroll -O jasperreports-server-4.6.0.zip https://versaweb.dl.sourceforge.net/project/jasperserver/JasperServer/JasperReports%20Server%20Community%20Edition%206.4.0/TIB_js-jrs-cp_6.4.0_bin.zip
+
 # Copy jasperreports-server-<ver> zip file from resources dir.
 # Build will fail if file not present.
 COPY resources/jasperreports-server*zip /tmp/jasperserver.zip
